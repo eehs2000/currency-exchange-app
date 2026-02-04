@@ -1,0 +1,81 @@
+// Header Styles
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 var(--spacing-xl);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    &-img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    &-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+
+    &-links {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    &-link {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--gray-900);
+      }
+
+      &.active {
+        color: var(--gray-900);
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-logout-btn {
+    padding: 8px 8px;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+}

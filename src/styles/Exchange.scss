@@ -1,0 +1,475 @@
+// Exchange Page Layout
+.exchange-page {
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+// 섹션 헤더
+.section-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+}
+
+// 메인 콘텐츠 영역
+.exchange-content {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex: 1;
+}
+
+// 왼쪽 섹션
+.exchange-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+// 환율 카드
+.rate-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.rate-card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  &-currency {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+
+  &-name {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+
+  &-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  &-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &.up {
+      color: #ef4444;
+    }
+
+    &.down {
+      color: #3b82f6;
+    }
+  }
+}
+
+// 내 지갑 카드
+.wallet-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+
+  &-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+.wallet-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.wallet-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+}
+
+.wallet-currency {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+}
+
+.wallet-balance {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+.wallet-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-200);
+
+  &-label {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+  }
+
+  &-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+}
+
+// 오른쪽 섹션 - 환전 폼
+.exchange-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.exchange-form-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+// 통화 선택 드롭다운
+.currency-selector {
+  position: relative;
+  margin-bottom: 8px;
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    background: none;
+    padding: var(--spacing-sm) 0;
+  }
+}
+
+.currency-flag {
+  font-size: 1.25rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-left: var(--spacing-xs);
+}
+
+.currency-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  min-width: 160px;
+}
+
+.currency-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  text-align: left;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--gray-100);
+  }
+
+  &.active {
+    background-color: var(--gray-100);
+    font-weight: 500;
+  }
+}
+
+// 살래요/팔래요 토글
+.trade-toggle {
+  display: flex;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 6px;
+  margin-bottom: var(--spacing-lg);
+
+  &-btn {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+
+    &.buy {
+      color: #ef4444;
+    }
+
+    &.sell {
+      color: var(--primary-color);
+    }
+
+    &.active {
+      color: var(--white);
+
+      &.buy {
+        background-color: #ef4444;
+      }
+
+      &.sell {
+        background-color: var(--primary-color);
+      }
+    }
+  }
+}
+
+// 환전 폼
+.exchange-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+
+  &-label {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+  }
+}
+
+.form-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+
+  &.result {
+    background-color: var(--gray-50);
+    border-color: var(--gray-100);
+  }
+}
+
+.form-input-suffix {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  margin-left: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+.exchange-input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--gray-900);
+  text-align: right;
+  padding: 0;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--gray-400);
+  }
+}
+
+.form-result {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-900);
+  text-align: right;
+
+  &-suffix {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+}
+
+// 화살표
+.form-arrow {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.arrow-circle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-100);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+// 하단 고정 영역
+.form-bottom {
+  margin-top: auto;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-200);
+}
+
+// 적용 환율
+.applied-rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  margin-bottom: var(--spacing-md);
+
+  &-label {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+  }
+
+  &-value {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+  }
+}
+
+// 에러/성공 메시지
+.form-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.form-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+// 환전하기 버튼
+.exchange-submit-btn {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: #1f2937;
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #111827;
+  }
+
+  &:disabled {
+    background-color: var(--gray-300);
+    cursor: not-allowed;
+  }
+}
+
+// 로딩 스피너
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gray-200);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: var(--spacing-md) auto;
+
+  &.small {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// 반응형
+@media (max-width: 900px) {
+  .exchange-content {
+    flex-direction: column;
+  }
+
+  .rate-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .rate-cards {
+    grid-template-columns: 1fr;
+  }
+}
