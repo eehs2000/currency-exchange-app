@@ -124,6 +124,7 @@ const HistoryPage = () => {
           <div className="history-table-wrapper">
             <table className="history-table">
               <thead>
+                <tr className="history-table-header-empty"></tr>
                 <tr>
                   <th>거래 ID</th>
                   <th>거래 일시</th>
